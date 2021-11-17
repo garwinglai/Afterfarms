@@ -1,0 +1,61 @@
+.MyOrders_menu button {
+	background-color: transparent;
+	border: none;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: var(--secondary-text);
+}
+
+.MyOrders_menu {
+	display: flex;
+	align-items: center;
+}
+
+.divider {
+	padding: 0 20px;
+	font-size: 25px;
+	font-weight: 900;
+	color: var(--secondary-text);
+}
+
+.MyOrders_cards p {
+	color: var(--gray-text);
+}
+
+@media screen and (min-width: 801px) {
+	.MyOrders {
+		width: 85%;
+	}
+
+	.MyOrders_cards {
+		width: 100%;
+	}
+
+	.MyOrders_currentOrder {
+		margin-top: 60px;
+	}
+
+	.MyOrders_pastOrders {
+		margin-top: 80px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.MyOrders {
+		padding: 10px 25px;
+	}
+
+	.MyOrders_currentOrder {
+		margin-top: 40px;
+	}
+
+	.MyOrders_pastOrders {
+		margin-top: 80px;
+	}
+
+	.MyOrders_cards {
+		margin-top: 40px;
+	}
+}

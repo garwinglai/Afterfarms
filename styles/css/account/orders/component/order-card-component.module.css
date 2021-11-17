@@ -1,0 +1,37 @@
+.OrderCard {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--pale-yellow);
+	padding: 10px 20px;
+	border-radius: 5px;
+	box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+		0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
+	margin-bottom: 35px;
+}
+
+.OrderCard h5 {
+	margin: 0;
+}
+
+.OrderCard button {
+	background-color: transparent;
+	border: 0.5px solid black;
+	width: auto;
+	padding: 10px 20px;
+	height: auto;
+	margin: 0;
+}
+
+.PastOrderCard {
+	background-color: var(--pale-yellow);
+}
+
+.FutureOrderCard {
+	background-color: var(--pale-yellow);
+}
+
+.FutureOrderCard p {
+	margin: 0;
+	font-size: 12px;
+}

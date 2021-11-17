@@ -1,0 +1,694 @@
+:root {
+	--primary-text: #2d2d2d;
+	--secondary-text: #666666;
+	--black: #000000;
+	--white: #ffffff;
+	--old-green-text: #3b6635;
+	--green-text: #2e8540;
+	--red-text: #9a4726;
+	--light-pepper: #fbf0ea;
+	--gray-text: #969696;
+	--gray-bg: #f6f6f6;
+	--gray-border: #c3c3c3;
+	--gray-bg-transparent: #2d2d2d60;
+	--tan-bg: #fff9ea;
+	--tanner-bg: #eee7ca;
+	--yellow-bg: #f2e880;
+	--yellow-bg-2: #fcf3db;
+	--yellow-bg-transparent: #f1c34a70;
+
+	--yellow-border: #f2c44b;
+	--pale-yellow: #f8f2dd;
+	--avocado-yellow: #ffd964;
+	--green-bg-light: rgb(222, 240, 185);
+	--green-bg: rgb(197, 215, 161);
+	--avocado-green: #6c8f32;
+	--avocado-green-med: #558303;
+	--avocado-green-dark: #356211;
+	--avocado-brown-med: #c15c37;
+	--avocado-brown-dark: #aa471f;
+
+	--red-bg: #de8255;
+	--orange-bg: #dfa455;
+	--green-bg-transparent: #b0c47270;
+	--brown-bg: #f2ebd1;
+	--brown-bg-transparent: #f2ebd150;
+	--light-brown-bg: #f6f0dd;
+	--error-bg: #ffe0d0;
+	--success-bg: #fbffed;
+	--ivy: #4c884b;
+	--lighter-yellow-bg: #f8e1a4;
+	--light-green-bg2: #d7e1b8;
+	--light-yellow-bg: #eed099;
+	--light-blue-bg: #b0bdcd;
+	--bone: #faf8ef;
+	--pear: #dcd2ac;
+}
+
+html {
+	min-height: 100%;
+	margin: 0;
+	padding-bottom: 50px;
+	scroll-behavior: smooth;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0 !important;
+	position: relative;
+	overflow-x: hidden;
+	height: 100%;
+	min-width: 100%;
+	width: 100%;
+	padding: 0 !important;
+	font-family: "Merriweather Sans", sans-serif;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "kern" 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: var(--primary-text);
+}
+
+h1 {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-size: 1.55em;
+	font-weight: bolder;
+}
+
+h2 {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+h3 {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+h4 {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+h5 {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+p,
+label,
+span {
+	font-family: "Merriweather Sans", sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1em;
+	line-height: 25px;
+	padding: 0;
+	color: var(--primary-text);
+}
+
+button {
+	background-color: var(--avocado-yellow);
+	margin: 10px 0;
+	color: var(--black);
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-size: 16px;
+	/* line-height: 20px; */
+	/* font-weight: bold; */
+	font-style: normal;
+	text-align: center;
+	border: 2px solid var(--primary-text);
+	border-radius: 4px;
+	cursor: pointer;
+	transition: 0.25s;
+	width: -webkit-fill-available;
+	width: -moz-available;
+	height: 50px;
+}
+
+button:visited {
+	background-color: var(--avocado-yellow);
+	color: var(--black);
+}
+
+input,
+select,
+textarea {
+	padding: 10px 15px;
+	margin: 10px 0;
+	display: block;
+	text-decoration: none;
+	font-family: "Merriweather Sans", sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	background: var(--white);
+	border: 1px solid var(--gray-border);
+	cursor: pointer;
+	transition: 0.25s;
+	font-size: 1em;
+	width: 100%;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input,
+select {
+	height: 60px;
+}
+
+input.invalid,
+select.invalid {
+	background: var(--light-pepper) !important;
+	border: 2px solid var(--red-text) !important;
+}
+
+select:disabled {
+	background: #f6f6f6;
+	border: 1px solid #f6f6f6;
+}
+
+button:disabled {
+	cursor: not-allowed;
+	background: var(--gray-border);
+	color: var(--gray-text);
+	border: 2px solid var(--gray-border);
+}
+
+input[type="checkbox"] {
+	width: auto;
+	margin: 0 1% 0 0;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+/* checkbox styles */
+
+input[type="checkbox"]:checked ~ .checkmark:after {
+	display: block;
+}
+
+input[type="checkbox"]:checked ~ .checkmark {
+	background: var(--ivy);
+	border: 1px solid var(--ivy);
+}
+
+input[type="checkbox"] ~ .checkmark {
+	position: absolute;
+	top: 4px;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: var(--white);
+	border: 1px solid var(--primary-text);
+	border-radius: 2px;
+}
+
+input[type="checkbox"] ~ .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+	left: 5px;
+	top: 6px;
+	width: 16px;
+	height: 16px;
+	background-image: url(https://static.misfitsmarket.com/images/white-check.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+/* radio button styles */
+input[type="radio"] ~ .checkmark {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	border: 1px solid #2d2d2d;
+	border-radius: 50%;
+}
+
+input[type="radio"] ~ .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+	top: 3px;
+	left: 3px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: var(--green-text);
+}
+
+input:checked ~ .checkmark:after {
+	display: block;
+}
+
+::placeholder {
+	font-family: "Merriweather Sans", sans-serif;
+	color: var(--secondary-text);
+}
+
+a {
+	color: var(--primary-text);
+}
+
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+
+.feature-underline {
+	margin: 8% auto;
+	width: 20vw;
+	height: 5px;
+	display: block;
+	background-color: var(--yellow-bg);
+}
+
+ul {
+	margin: 0;
+}
+
+.StripeElement {
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+.StripeElement--webkit-autofill {
+	background-color: var(--tan-bg) !important;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+.display {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-size: 64px;
+	line-height: 74px;
+}
+.title-large {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-size: 45px;
+	line-height: 60px;
+}
+.title-medium {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-size: 40px;
+	line-height: 52px;
+}
+.title-small {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-size: 36px;
+	line-height: 46px;
+}
+.title-xsmall {
+	font-family: "Mochiy Pop P One", sans-serif;
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.body-large {
+	font-family: "Merriweather Sans", sans-serif;
+	font-size: 24px;
+	line-height: 34px;
+}
+.body-medium {
+	font-family: "Merriweather Sans", sans-serif;
+	font-size: 20px;
+	line-height: 30px;
+}
+.body-small {
+	font-family: "Merriweather Sans", sans-serif;
+	font-size: 16px;
+	line-height: 26px;
+}
+.body-xsmall {
+	font-family: "Merriweather Sans", sans-serif;
+	font-size: 14px;
+	line-height: 24px;
+}
+.body-xxsmall {
+	font-family: "Merriweather Sans", sans-serif;
+	font-size: 12px;
+	line-height: 22px;
+}
+
+.link {
+	text-decoration: underline;
+	color: var(--green-text);
+	cursor: pointer;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+b {
+	font-family: "Merriweather Sans", sans-serif;
+}
+
+a {
+	text-decoration: underline;
+	color: var(--green-text);
+	font-family: "Merriweather Sans", sans-serif;
+}
+
+.mobile-padding {
+	padding: 15px 35px 35px 35px;
+}
+
+.tan-bg {
+	background: var(--tan-bg);
+}
+.yellow-bg {
+	background: var(--avocado-yellow);
+}
+.green-bg {
+	background: var(--green-bg);
+}
+.red-bg {
+	background: var(--red-bg);
+}
+.brown-bg {
+	background: var(--brown-bg);
+}
+.gray-bg {
+	background: var(--gray-bg);
+}
+.white-bg {
+	background: #fff;
+}
+.gray-text {
+	color: var(--secondary-text);
+}
+.lgray-text {
+	color: var(--gray-text);
+}
+.red-text {
+	color: var(--red-text);
+}
+.ivy-text {
+	color: var(--green-text);
+}
+.green-text {
+	color: var(--green-text);
+}
+
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+
+.card {
+	background: var(--white);
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+.card-header {
+	text-align: center;
+	padding: 20px 10px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+.card-header-img {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	overflow: hidden;
+}
+.card-header-img img {
+	width: 100%;
+}
+.card-body {
+	padding: 20px;
+}
+.card-footer {
+	padding: 16px;
+	background: var(--gray-bg);
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.modal {
+	width: 100vh;
+	position: fixed;
+	bottom: 0;
+	background: white;
+	z-index: 200;
+	padding-top: 20px;
+}
+
+.modal img {
+	cursor: pointer;
+	float: right;
+	position: relative;
+	top: -10px;
+	left: 10px;
+}
+
+.modal-background {
+	width: 100vh;
+	height: 100%;
+	background: var(--gray-bg-transparent);
+	z-index: 199;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.success-msg {
+	background: var(--success-bg);
+	border: 1px solid var(--ivy);
+	border-radius: 10px;
+	padding: 0 20px;
+	margin: 15px 35px 0px 35px;
+}
+.success-msg p {
+	color: var(--green-text);
+}
+
+.error-msg {
+	background: var(--error-bg);
+	border: 1px solid var(--red-text);
+	border-radius: 10px;
+	padding: 0 20px;
+	margin: 15px 35px 0px 35px;
+}
+.error-msg p {
+	color: var(--red-text);
+}
+
+#kustomer-ui-sdk-iframe.bottom-space {
+	bottom: 90px !important;
+}
+.ejDqyh {
+	width: 100%;
+	/* overflow: hidden scroll; */
+	background-color: var(--tan-bg);
+	position: relative;
+	padding-top: 50px;
+}
+
+/* ---------------------- SUBSCRIBE ---------------------- */
+.kYiPJi {
+	background-image: url("https://static.misfitsmarket.com/images/MM_home-LIP-subscribe-mobile2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	position: relative;
+	top: -7px;
+}
+
+.ejDqyh .divider-blob {
+	width: 100%;
+}
+
+.ejDqyh .desktop {
+	display: none;
+}
+
+.kYiPJi > div {
+	padding: 20px 35px 180px;
+}
+
+.kYiPJi h1 {
+	padding-bottom: 30px;
+}
+
+.kYiPJi .bandaid {
+	padding: 0px;
+	/* width: 100vh; */
+	height: 30px;
+	position: relative;
+	margin-top: -10px;
+}
+
+.kYiPJi input {
+	border: none;
+	padding: 15px 20px;
+	height: 70px;
+}
+
+.IOS__button {
+	background-color: var(--black);
+	color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-container p {
+	zoom: 80%;
+	padding-bottom: 10px;
+}
+
+@media (hover: hover) {
+	button:hover {
+		opacity: 1;
+		background-color: var(--avocado-brown-dark);
+		color: var(--avocado-yellow);
+	}
+
+	input[type="radio"] ~ .checkmark:hover {
+		cursor: pointer;
+	}
+
+	input[type="checkbox"] ~ .checkmark:hover {
+		cursor: pointer;
+	}
+
+	.IOS__button:hover {
+		color: black !important;
+		background-color: white !important;
+	}
+}
+
+@media (hover: none) {
+	button:active {
+		opacity: 1;
+		background-color: var(--avocado-brown-dark);
+		color: var(--avocado-yellow);
+	}
+}
+
+@media screen and (min-width: 850px) {
+	h1 {
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 1.85em;
+	}
+
+	h3 {
+		font-size: 1.55em;
+	}
+
+	h4 {
+		font-size: 1.25em;
+	}
+
+	h5 {
+		font-size: 1em;
+	}
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 801px) {
+	/* body {
+		margin: 0;
+		width: 100vw;
+	} */
+
+	.modal {
+		top: 15%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		width: 700px;
+		height: 525px;
+		border-radius: 8px;
+	}
+
+	.modal button {
+		width: 200px;
+		float: right;
+	}
+
+	.kYiPJi {
+		background-image: none;
+	}
+
+	.ejDqyh .mobile {
+		display: none;
+	}
+
+	.ejDqyh .desktop {
+		display: block;
+	}
+
+	/* ----------------- SUBSCRIBE ----------------- */
+
+	.kYiPJi > div {
+		background-image: url("https://static.misfitsmarket.com/images/MM_home-LIP-subscribe-desktop2.jpg");
+		background-color: var(--green-bg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center bottom;
+		position: relative;
+		top: -22px;
+	}
+
+	.kYiPJi .form-container {
+		padding: 90px 35px 120px;
+		max-width: 600px;
+		margin: -20px auto;
+		text-align: center;
+	}
+
+	.kYiPJi .form-container .ejDqyh h2.desk-med {
+		font-size: 42px;
+		line-height: 52px;
+	}
+
+	.ejDqyh p.desk-med {
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.kYiPJi form {
+		margin-top: 40px;
+	}
+
+	.kYiPJi .form-container input {
+		width: 500px;
+		margin: 20px auto;
+	}
+
+	.ejDqyh button {
+		/* max-width: 260px; */
+		height: 60px !important;
+		font-size: 20px !important;
+	}
+}

@@ -1,0 +1,46 @@
+.Info {
+	padding: 100px 25px 200px;
+}
+
+.info__icon {
+	display: block;
+	width: 70px;
+	height: 70px;
+	margin: auto;
+	padding-bottom: 20px;
+	width: 100%;
+	height: auto;
+}
+
+@media screen and (min-width: 801px) {
+	.info__icon {
+		width: 45% !important;
+		/* height: 50%; */
+	}
+
+	.info__icon__delivery {
+		height: 400px;
+		object-fit: cover;
+	}
+
+	.Info p {
+		width: 60%;
+		margin: auto;
+		margin-top: 25px;
+	}
+
+	.info__icon__aboutOne {
+		height: 500px;
+		object-fit: contain;
+		padding-right: 15px;
+		float: left;
+	}
+
+	.info__icon__aboutTwo {
+		height: 500px;
+		object-fit: contain;
+		float: right;
+		padding-top: 15px;
+		padding-left: 15px;
+	}
+}

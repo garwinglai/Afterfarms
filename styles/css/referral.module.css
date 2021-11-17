@@ -1,0 +1,23 @@
+.Referral {
+	padding: 50px 25px 100px;
+}
+
+.Referral__icon {
+  width: 100%;
+}
+
+@media screen and (min-width: 801px) {
+  .Referral {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .Referral__icon {
+    width: 60%;
+  }
+
+  .Referral p {
+    text-align: left;
+  }
+}

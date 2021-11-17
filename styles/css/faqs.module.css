@@ -1,0 +1,38 @@
+.faqs {
+	padding: 100px 25px 200px;
+}
+.accordion {
+	background-color: var(--avocado-yellow);
+	color: var(--black);
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	text-align: center;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+}
+
+.panel {
+	padding: 0 18px;
+	background-color: white;
+	display: none;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 801px) {
+	.faqs {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.accordion {
+		width: 70%;
+	}
+
+	.panel {
+		width: 70%;
+		text-align: left;
+	}
+}

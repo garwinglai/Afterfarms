@@ -1,0 +1,11 @@
+@media screen and (min-width: 801px) {
+  .ProduceInfo {
+    width: 60%;
+    margin: auto;
+    text-align: left;
+  }
+
+  .ProduceInfo p {
+    width: 100%;
+  }
+}

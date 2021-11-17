@@ -1,0 +1,24 @@
+.ProduceDetails {
+	display: flex;
+	justify-content: space-between;
+}
+
+.Detail_one {
+	width: 20%;
+}
+
+.Detail_two {
+	width: 40%;
+	margin-right: 15px;
+}
+
+.Detail_three {
+	width: 20%;
+}
+
+.Detail_four {
+	width: auto;
+}
+
+@media screen and (min-width: 801px) {
+}

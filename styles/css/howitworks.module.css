@@ -1,0 +1,31 @@
+.pageHeader {
+	padding: 15px 25px 50px;
+}
+
+.pageHeader__section__title {
+	display: flex;
+	align-items: flex-start;
+	padding-top: 50px;
+}
+
+.pageHeader__h3 {
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+.pageHeader__icon {
+	color: var(--avocado-brown-med);
+	font-size: 30px;
+	padding-right: 20px;
+}
+
+.pageHeader__section div p {
+	padding-left: 50px;
+}
+
+@media screen and (min-width: 801px) {
+	.pageHeader {
+		width: 45%;
+		margin: auto;
+	}
+}
