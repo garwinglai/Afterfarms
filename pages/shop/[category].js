@@ -45,3 +45,5 @@ function Category() {
 }
 
 export default Category;
+
+// todo: Use getStaticPaths & getStaticProps to load paths. The paths work, but it won't on reload, so must use getStaticPaths

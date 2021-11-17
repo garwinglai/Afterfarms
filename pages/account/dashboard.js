@@ -184,7 +184,7 @@ function Dashboard() {
 							<h5>Build your box</h5>
 							<p>
 								During your shopping window, you&apos;ll be able to view our
-								member's only produce. We&apos;re constantly adding new rescued
+								member&apos;s only produce. We&apos;re constantly adding new rescued
 								items, so check back frequently!
 							</p>
 						</section>

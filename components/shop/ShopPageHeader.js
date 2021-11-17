@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../styles/css/shop/shop-page-header.module.css";
 import Link from "next/link";
+let scrollToComponent;
 
 function ShopPageHeader({ menuPage, anchor }) {
 	// ! Temp Array of categories
@@ -18,7 +19,7 @@ function ShopPageHeader({ menuPage, anchor }) {
 
 	const [isScroll, setIsScroll] = useState(false);
 	const { anchorOneRef, anchorTwoRef, anchorThreeRef } = anchor;
-	let scrollToComponent;
+	// let scrollToComponent;
 
 	useEffect(() => {
 		scrollToComponent = require("react-scroll-to-component");

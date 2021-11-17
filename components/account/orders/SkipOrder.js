@@ -45,7 +45,7 @@ function SkipOrder({ manageView, skipOrder }) {
 						onChange={handleCheckChange}
 					/>
 					<label htmlFor="donate-check-box">
-						You agree to be charged $30, and we'll donate it to a philanthropic
+						You agree to be charged $30, and we&apos;ll donate it to a philanthropic
 						organization on your behalf.{" "}
 					</label>{" "}
 				</div>

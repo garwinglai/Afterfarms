@@ -1,19 +1,19 @@
-import { collection, addDoc, doc, getDoc, getDocs } from "firebase/firestore";
-import { db } from "../../firebase/fireConfig";
+// import { collection, addDoc, doc, getDoc, getDocs } from "firebase/firestore";
+// import { db } from "../../firebase/fireConfig";
 
-// * GET AVAILABLE ZIP CODES
-async function getZipCode(zipCode) {
-	const docRef = doc(db, "availableZip", zipCode);
-	const docSnap = await getDoc(docRef);
+// // * GET AVAILABLE ZIP CODES
+// async function getZipCode(zipCode) {
+// 	const docRef = doc(db, "availableZip", zipCode);
+// 	const docSnap = await getDoc(docRef);
 
-	if (docSnap.exists()) {
-		return docSnap.data().available;
-	} else {
-		return false;
-	}
-}
+// 	if (docSnap.exists()) {
+// 		return docSnap.data().available;
+// 	} else {
+// 		return false;
+// 	}
+// }
 
-export { getZipCode };
+// export { getZipCode };
 
 // ! This is test data and functions
 // async function signup(user) {

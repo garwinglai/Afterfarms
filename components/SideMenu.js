@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/css/account/sidemenu.module.css";
 import Link from "next/link";
-// const scrollToComponent = require("react-scroll-to-component");
+let scrollToComponent;
+// let myRefPageContainer;
+let pageContainerHeight;
 
 function SideMenu({ children, menuPage, page, anchor }) {
 	const [isClicked, setIsClicked] = useState({
@@ -15,20 +17,17 @@ function SideMenu({ children, menuPage, page, anchor }) {
 	const { isOrganic, isNonOrganic, isGreens, isLeafy } = isClicked;
 	const { anchorOneRef, anchorTwoRef, anchorThreeRef } = anchor;
 
-	let scrollToComponent;
 	let myRefPageContainer = useRef();
-	let pageContainerHeight;
 
 	useEffect(() => {
-		scrollToComponent = require("react-scroll-to-component");
+		scrollToComponent = require("react-scroll-to-component")
 		window.addEventListener("scroll", handleScroll);
 		pageContainerHeight = myRefPageContainer.current.clientHeight;
-		console.log(pageContainerHeight);
 		return () => window.removeEventListener("scroll", handleScroll);
-	}, [isClicked, anchor, pageContainerHeight, scrollToComponent]);
+	}, [isClicked, anchor]);
 
 	function handleScroll() {
-		if (window.scrollY < pageContainerHeight - 0) {
+		if (window.scrollY < pageContainerHeight - 250) {
 			setIsScroll(true);
 		} else {
 			setIsScroll(false);
@@ -101,8 +100,8 @@ function SideMenu({ children, menuPage, page, anchor }) {
 							style={
 								isNonOrganic
 									? {
-											color: "var(--green-text)",
-									  }
+										color: "var(--green-text)",
+									}
 									: { color: "var(--gray-text)" }
 							}
 						>
@@ -114,8 +113,8 @@ function SideMenu({ children, menuPage, page, anchor }) {
 							style={
 								isOrganic
 									? {
-											color: "var(--green-text)",
-									  }
+										color: "var(--green-text)",
+									}
 									: { color: "var(--gray-text)" }
 							}
 						>
@@ -133,8 +132,8 @@ function SideMenu({ children, menuPage, page, anchor }) {
 							style={
 								isGreens
 									? {
-											color: "var(--green-text)",
-									  }
+										color: "var(--green-text)",
+									}
 									: { color: "var(--gray-text)" }
 							}
 						>
@@ -146,8 +145,8 @@ function SideMenu({ children, menuPage, page, anchor }) {
 							style={
 								isLeafy
 									? {
-											color: "var(--green-text)",
-									  }
+										color: "var(--green-text)",
+									}
 									: { color: "var(--gray-text)" }
 							}
 						>
@@ -204,6 +203,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 							Manage Account
 						</a>
 					</Link>
+					{/* //TODO: Page on notifications, side menu scrolls too far */}
 					<Link href="/account/notifications">
 						<a
 							className={styles.SideMenu_menuTopItem}
@@ -229,9 +229,9 @@ function SideMenu({ children, menuPage, page, anchor }) {
 							style={
 								menuPage === "shop"
 									? {
-											color: "var(--avocado-green-dark)",
-											textDecoration: "underline",
-									  }
+										color: "var(--avocado-green-dark)",
+										textDecoration: "underline",
+									}
 									: { color: "var(--gray-text)" }
 							}
 						>
@@ -245,9 +245,9 @@ function SideMenu({ children, menuPage, page, anchor }) {
 							style={
 								menuPage === "fruits"
 									? {
-											color: "var(--avocado-green-dark)",
-											textDecoration: "underline",
-									  }
+										color: "var(--avocado-green-dark)",
+										textDecoration: "underline",
+									}
 									: { color: "var(--gray-text)" }
 							}
 						>
@@ -262,9 +262,9 @@ function SideMenu({ children, menuPage, page, anchor }) {
 							style={
 								menuPage === "vegetables"
 									? {
-											color: "var(--avocado-green-dark)",
-											textDecoration: "underline",
-									  }
+										color: "var(--avocado-green-dark)",
+										textDecoration: "underline",
+									}
 									: { color: "var(--gray-text)" }
 							}
 						>
