@@ -1,5 +1,4 @@
 import React from "react";
-import subscribestripcss from "../../styles/styleJsx/home/subscribe-strip-css";
 import AppleIcon from "@mui/icons-material/Apple";
 
 // ---------------- CSS Is on Global Sheet ----------------
@@ -46,7 +45,7 @@ function SubscribeStrip() {
 								placeholder="Your Email"
 								aria-label="Your Email"
 								required=""
-								// value=""
+							// value=""
 							/>
 							<input
 								type="number"
@@ -58,7 +57,7 @@ function SubscribeStrip() {
 								placeholder="Zip Code"
 								aria-label="Zip Code"
 								required=""
-								// value=""
+							// value=""
 							/>
 							<span className="body-xsmall">
 								By providing your email address, you agree to our
@@ -84,7 +83,7 @@ function SubscribeStrip() {
 						</button>
 					</div>
 				</div>
-				<style jsx>{subscribestripcss}</style>
+				{/* <style jsx>{subscribestripcss}</style> */}
 			</div>
 		</React.Fragment>
 	);
