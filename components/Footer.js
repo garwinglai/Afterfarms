@@ -95,7 +95,7 @@ function Footer() {
 								placeholder="Email"
 								aria-label="Your email"
 								required=""
-								// value=""
+							// value=""
 							/>
 							<input
 								type="number"
@@ -107,7 +107,7 @@ function Footer() {
 								placeholder="Zip Code"
 								aria-label="Your zip code"
 								required=""
-								// value=""
+							// value=""
 							/>
 							<button className="yellow-bg" type="submit">
 								Sign Up
