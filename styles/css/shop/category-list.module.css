@@ -1,0 +1,15 @@
+.CategoryList {
+  padding-left: 30px;
+  margin-top: 35px;
+}
+
+.CategoryList h4 {
+  margin: 0;
+}
+
+@media screen and (min-width: 801px) {
+  .Category_cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

@@ -12,13 +12,18 @@ import { useRouter } from "next/router";
 
 function Dashboard() {
 	// TODO: Get User Data + Shopping Window timing
-	const [isShoppingWindow, setIsShoppingWindow] = useState(false);
+	const [toggles, setToggles] = useState({
+		isShoppingWindow: false,
+		isLoading: false
+	})
+
+	const { isShoppingWindow, isLoading } = toggles
+
 	const myName = "Garwing";
 	const router = useRouter();
 
 	// * Shop Now Navigation
 	function handleShopNowClick() {
-		console.log("clicked");
 		router.push("/shop");
 	}
 

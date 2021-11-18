@@ -1,15 +1,24 @@
 .Category {
-	height: 100vh;
-	width: 100%;
-	padding: 30px;
+  width: 100%;
+  padding-top: 30px;
+  margin-bottom: 200px;
 }
 
-.Category + h1 {
-	margin-bottom: 1000px;
+.Category_title {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  margin: 40px 0 50px 50px;
+}
+
+.Category_title h1,
+.Category_title p {
+  margin: 0 0 0 20px;
+  padding: 0;
 }
 
 @media screen and (max-width: 800px) {
-	.Category_headerScroll {
-		position: fixed;
-	}
+  .Category_headerScroll {
+    position: fixed;
+  }
 }

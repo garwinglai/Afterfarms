@@ -3,7 +3,7 @@ import styles from "../../styles/css/shop/shop-page-header.module.css";
 import Link from "next/link";
 let scrollToComponent;
 
-function ShopPageHeader({ menuPage, anchor }) {
+function ShopPageHeader({ menuPage, anchor, pageNav }) {
 	// ! Temp Array of categories
 	const categoryArrFruits = [
 		"Non-organic",
@@ -46,56 +46,62 @@ function ShopPageHeader({ menuPage, anchor }) {
 		}
 	}
 
+	// * Mobile Horizontal Menu *************************************************************
+
+	function showMobileHorizontalMenu() {
+		return <div className={`${styles.ShopPageHeader_categoriesMobile}`}>
+			<p
+				onClick={(e) => handleCategoryClick(e, anchorOneRef)}
+				className={styles.Categories_title}
+			>
+				Non-Organic
+			</p>
+			<p
+				onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
+				className={styles.Categories_title}
+			>
+				Organic
+			</p>
+			<p
+				onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
+				className={styles.Categories_title}
+			>
+				Organic
+			</p>
+			<p
+				onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
+				className={styles.Categories_title}
+			>
+				Organic
+			</p>
+			<p
+				onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
+				className={styles.Categories_title}
+			>
+				Organic
+			</p>
+			<p
+				onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
+				className={styles.Categories_title}
+			>
+				Organic
+			</p>
+		</div>
+	}
+
 	return (
 		<div className={styles.ShopPageHeader}>
 			<div className={styles.ShopPageHeader_navigation}>
 				<i className="fas fa-angle-left"></i>
-				{console.log(isScroll)}
 				<Link href="/shop">
 					<a>shop</a>
 				</Link>
+				<p>/</p>
 				{/* //todo: conditional data fetch */}
-				<p>/ Fruits</p>
+				<p>{pageNav}</p>
 			</div>
 			{/* //todo: map data array for categories */}
-			<div className={`${styles.ShopPageHeader_categories}`}>
-				<p
-					onClick={(e) => handleCategoryClick(e, anchorOneRef)}
-					className={styles.Categories_title}
-				>
-					Non-Organic
-				</p>
-				<p
-					onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
-					className={styles.Categories_title}
-				>
-					Organic
-				</p>
-				<p
-					onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
-					className={styles.Categories_title}
-				>
-					Organic
-				</p>
-				<p
-					onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
-					className={styles.Categories_title}
-				>
-					Organic
-				</p>
-				<p
-					onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
-					className={styles.Categories_title}
-				>
-					Organic
-				</p>
-				<p
-					onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
-					className={styles.Categories_title}
-				>
-					Organic
-				</p>
-			</div>
+			{showMobileHorizontalMenu()}
 		</div>
 	);
 }

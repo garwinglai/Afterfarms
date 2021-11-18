@@ -15,7 +15,6 @@ function Notifications() {
 
 	function handelToggle(e) {
 		const { name, checked } = e.target;
-		console.log(name, checked);
 		setIsToggle({ ...isToggle, [name]: checked });
 	}
 

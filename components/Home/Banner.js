@@ -20,7 +20,6 @@ function Banner() {
 		setWaitListInfo({ ...waitListInfo, [name]: value });
 	}
 
-	// console.log(email, zipCode);
 
 	async function handleInputSubmit(e) {
 		e.preventDefault();
@@ -28,13 +27,11 @@ function Banner() {
 			return;
 		}
 		const threeDigitZip = zipCode.slice(0, 3);
-		console.log(threeDigitZip);
 		let zipAvailable = await getZipCode(threeDigitZip);
 		if (zipAvailable) {
 			setShowWaitListTruePopUp(true);
 		} else {
 			setShowWaitListFalsePopUp(true);
-			// console.log(zipAvailable);
 		}
 	}
 
@@ -45,7 +42,6 @@ function Banner() {
 
 	return (
 		<React.Fragment>
-			{console.log(showWaitListFalsePopUp)}
 			{showWaitListFalsePopUp && (
 				<div className="PopUp">
 					<h1

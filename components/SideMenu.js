@@ -34,6 +34,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 		}
 	}
 
+	// * HandleClick Scroll to Anchor *************************************************************
 	function handleCategoryClick(e, category) {
 		const { name } = e.target;
 		if (category) {
@@ -89,6 +90,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 		}
 	}
 
+	// * SubProduce Menu **********************************************************************
 	function showSubProduceMenu(menuPage) {
 		switch (menuPage) {
 			case "fruits":
@@ -163,6 +165,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 	}
 
 	// * Top Side Menu -----------------------------
+	// * TOP MENU Account PAGE **********************************************************************
 	function showMenuTop(pageName) {
 		if (pageName === "account") {
 			return (
@@ -219,7 +222,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 				</menu>
 			);
 
-			// * TOP MENU SHOP PAGE ------------------------------------------------
+			// * TOP MENU SHOP PAGE **********************************************************************
 		} else if (pageName === "shop") {
 			return (
 				<menu className={styles.SideMenu_menuTop}>
@@ -277,7 +280,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 		}
 	}
 
-	// * Bottom Side Menu Account -----------------------------
+	// * Bottom Side Menu Account Page ************************************************************
 	function showMenuBottom() {
 		return (
 			<menu className={styles.SideMenu_menuBottom}>
@@ -312,10 +315,11 @@ function SideMenu({ children, menuPage, page, anchor }) {
 	}
 
 	return (
-		<React.Fragment>
+
+		<div className={styles.SideMenuLayout}>
 			<div
 				className={`${styles.SideMenu_menuContainer}`}
-				style={isScroll ? {} : { position: "absolute" }}
+				style={page === "shop" ? isScroll ? { position: "fixed" } : { position: "absolute" } : undefined}
 			>
 				{page === "account" ? <h3>My Account</h3> : <h3>Menu</h3>}
 				{showMenuTop(page)}
@@ -331,7 +335,8 @@ function SideMenu({ children, menuPage, page, anchor }) {
 					{children}
 				</div>
 			</div>
-		</React.Fragment>
+		</div>
+
 	);
 }
 
