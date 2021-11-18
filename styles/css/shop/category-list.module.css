@@ -13,3 +13,15 @@
     flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .CategoryList {
+    padding: 0;
+  }
+
+  .CategoryList h2 {
+    padding: 0;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}

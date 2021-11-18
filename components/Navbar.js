@@ -8,6 +8,7 @@ import ClickAwayListener from "@mui/core/ClickAwayListener";
 import { infoData } from "../data/infoData";
 import { useRouter } from "next/router";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import OrderBar from "./shop/OrderBar";
 
 function Navbar({ page }) {
 	const [showMenu, setShowMenu] = useState(false);
@@ -24,7 +25,7 @@ function Navbar({ page }) {
 	}, []);
 
 	function handleScroll() {
-		if (window.scrollY > 150) {
+		if (window.scrollY > 50) {
 			setIsScroll(true);
 		} else {
 			setIsScroll(false);
@@ -139,6 +140,7 @@ function Navbar({ page }) {
 							{/* //TODO: page==="account" useEffect to get shopping window true/fase. */}
 							{navMenuButton(page)}
 						</div>
+						<OrderBar />
 					</div>
 
 					{/* Mobile html */}
@@ -234,6 +236,7 @@ function Navbar({ page }) {
 					</div>
 				</ClickAwayListener>
 			)}
+
 
 			<div className="sc-ckVGcZ dvMPLK" id="navHelper"></div>
 

@@ -11,7 +11,7 @@ export const produceCategoryData = [
             name: "Grapes",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: true,
             imgLinks: ["/images/website/product/grape/grapes.jpg", "/images/website/product/grapes/grape.jpg"]
 
@@ -20,7 +20,7 @@ export const produceCategoryData = [
             name: "Apple",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: false,
             imgLinks: ["/images/website/product/apple/apple.jpg", "/images/website/product/apple/apple_cut.jpg"]
           },
@@ -28,7 +28,7 @@ export const produceCategoryData = [
             name: "Apple",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: false,
             imgLinks: ["/images/website/product/apple/apple.jpg", "/images/website/product/apple/apple_cut.jpg"]
           },
@@ -36,7 +36,7 @@ export const produceCategoryData = [
             name: "Apple",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: false,
             imgLinks: ["/images/website/product/apple/apple.jpg", "/images/website/product/apple/apple_cut.jpg"]
           },
@@ -44,7 +44,7 @@ export const produceCategoryData = [
             name: "Apple",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: false,
             imgLinks: ["/images/website/product/apple/apple.jpg", "/images/website/product/apple/apple_cut.jpg"]
           }
@@ -57,7 +57,7 @@ export const produceCategoryData = [
             name: "Pineapple",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: true,
             imgLinks: ["/images/website/product/pineapple/pineapple.png"]
           },
@@ -65,7 +65,7 @@ export const produceCategoryData = [
             name: "Tomato",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: false,
             imgLinks: ["/images/website/product/tomato/tomato.jpg", "/images/website/product/tomato/tomato_group.jpg"]
           }
@@ -85,7 +85,7 @@ export const produceCategoryData = [
             name: "Kale",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: true,
             imgLinks: ["/images/website/product/kale/kale.jpg", "/images/website/product/kale/kale_salad.jpg"]
           },
@@ -93,7 +93,7 @@ export const produceCategoryData = [
             name: "Romaine Lettuce",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: false,
             imgLinks: ["/images/website/product/lettuce/lettuce.jpg"]
           }
@@ -106,7 +106,7 @@ export const produceCategoryData = [
             name: "Broccoli",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
             bestSeller: true,
             imgLinks: ["/images/website/product/broccoli/broccoli.jpg", "/images/website/product/broccoli/broccoli_bowl.jpg"]
           },
@@ -114,7 +114,29 @@ export const produceCategoryData = [
             name: "Cauliflower",
             ourPrice: "$3.18",
             marketPrice: "$3.99",
-            discount: "20%",
+            discount: "-20%",
+            bestSeller: false,
+            imgLinks: ["/images/website/product/cauliflower/cauliflower.jpg", "/images/website/product/cauliflower/cauliflower_dish.jpg"]
+          }
+        ]
+      }
+      ,
+      {
+        categoryTitle: "Broccoli, Cauliflower",
+        items: [
+          {
+            name: "Broccoli",
+            ourPrice: "$3.18",
+            marketPrice: "$3.99",
+            discount: "-20%",
+            bestSeller: true,
+            imgLinks: ["/images/website/product/broccoli/broccoli.jpg", "/images/website/product/broccoli/broccoli_bowl.jpg"]
+          },
+          {
+            name: "Cauliflower",
+            ourPrice: "$3.18",
+            marketPrice: "$3.99",
+            discount: "-20%",
             bestSeller: false,
             imgLinks: ["/images/website/product/cauliflower/cauliflower.jpg", "/images/website/product/cauliflower/cauliflower_dish.jpg"]
           }

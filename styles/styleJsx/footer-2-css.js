@@ -5,6 +5,8 @@ export default css`
 		${"" /* height: 100vh; */}
 		padding-top: 20px;
 		padding-bottom: 50px;
+		box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+		z-index: 1000;
 	}
 
 	.Footer2-instagram {

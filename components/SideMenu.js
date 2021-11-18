@@ -2,79 +2,118 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/css/account/sidemenu.module.css";
 import Link from "next/link";
 let scrollToComponent;
-// let myRefPageContainer;
 let pageContainerHeight;
 
-function SideMenu({ children, menuPage, page, anchor }) {
+function SideMenu({ children, menuPage, page, anchor, categories }) {
 	const [isClicked, setIsClicked] = useState({
 		isOrganic: false,
 		isNonOrganic: false,
-		isGreens: false,
+		isBroccoli: false,
 		isLeafy: false,
 	});
 	const [isScroll, setIsScroll] = useState(true);
+	const [currentAnchor, setCurrentAnchor] = useState(anchor.current)
 
-	const { isOrganic, isNonOrganic, isGreens, isLeafy } = isClicked;
-	const { anchorOneRef, anchorTwoRef, anchorThreeRef } = anchor;
+	const { isOrganic, isNonOrganic, isBroccoli, isLeafy } = isClicked;
 
 	let myRefPageContainer = useRef();
+	let anchorRefs = anchor.current;
+
+	// * Conditional Styling for Submenu Buttons
+	let subMenuStyle = (categoryName) => {
+		switch (categoryName) {
+			case "Non-organic fruits":
+				if (isNonOrganic) {
+					return { color: "var(--green-text)" }
+				}
+				break;
+			case "Organic fruits":
+				if (isOrganic) {
+					return { color: "var(--green-text)" }
+				}
+				break;
+			case "Leafy Greens":
+				if (isLeafy) {
+					return { color: "var(--green-text)" }
+				}
+				break;
+			case "Broccoli, Cauliflower":
+				if (isBroccoli) {
+					return { color: "var(--green-text)" }
+				}
+				break;
+			default:
+				break;
+		}
+	}
 
 	useEffect(() => {
 		scrollToComponent = require("react-scroll-to-component")
 		window.addEventListener("scroll", handleScroll);
 		pageContainerHeight = myRefPageContainer.current.clientHeight;
 		return () => window.removeEventListener("scroll", handleScroll);
-	}, [isClicked, anchor]);
+	}, [isClicked, currentAnchor]);
 
 	function handleScroll() {
-		if (window.scrollY < pageContainerHeight - 250) {
+		if (window.scrollY < pageContainerHeight + 300) {
 			setIsScroll(true);
 		} else {
 			setIsScroll(false);
 		}
 	}
 
+	function scrollToCategory(categoryName) {
+		anchorRefs.map((anchor) => {
+			if (anchor) {
+				if (anchor.innerHTML === categoryName) {
+					scrollToComponent(anchor, {
+						offset: 150,
+						align: "middle",
+						duration: 100,
+						ease: "inCirc",
+					});
+				}
+			}
+		})
+	}
+
 	// * HandleClick Scroll to Anchor *************************************************************
-	function handleCategoryClick(e, category) {
+	function handleCategoryClick(e) {
+
 		const { name } = e.target;
-		if (category) {
-			scrollToComponent(category.current, {
-				offset: 150,
-				align: "middle",
-				duration: 100,
-				ease: "inCirc",
-			});
-		}
+		scrollToCategory(name)
+
+		// *Manage Active colors for submenu
 		switch (name) {
-			case "isNonOrganic":
+			case "Non-organic fruits":
 				setIsClicked({
 					isOrganic: false,
 					isNonOrganic: true,
-					isGreens: false,
+					isBroccoli: false,
 					isLeafy: false,
 				});
 				break;
-			case "isOrganic":
+			case "Organic fruits":
 				setIsClicked({
 					isOrganic: true,
 					isNonOrganic: false,
-					isGreens: false,
+					isBroccoli: false,
 					isLeafy: false,
 				});
 				break;
-			case "isGreens":
+			case "Broccoli, Cauliflower":
 				setIsClicked({
 					isOrganic: false,
 					isNonOrganic: false,
-					isGreens: true,
+					isBroccoli: true,
 					isLeafy: false,
 				});
 				break;
-			case "isLeafy":
+			case "Leafy Greens":
 				setIsClicked({
 					isOrganic: false,
 					isNonOrganic: false,
-					isGreens: false,
+					isBroccoli: false,
 					isLeafy: true,
 				});
 				break;
@@ -83,7 +122,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 				setIsClicked({
 					isOrganic: false,
 					isNonOrganic: false,
-					isGreens: false,
+					isBroccoli: false,
 					isLeafy: false,
 				});
 				break;
@@ -91,70 +130,23 @@ function SideMenu({ children, menuPage, page, anchor }) {
 	}
 
 	// * SubProduce Menu **********************************************************************
+
 	function showSubProduceMenu(menuPage) {
 		switch (menuPage) {
 			case "fruits":
-				return (
-					<menu className={styles.SideMenu_shop}>
-						<a
-							name="isNonOrganic"
-							onClick={(e) => handleCategoryClick(e, anchorOneRef)}
-							style={
-								isNonOrganic
-									? {
-										color: "var(--green-text)",
-									}
-									: { color: "var(--gray-text)" }
-							}
-						>
-							Non-organic fruits
-						</a>
-						<a
-							name="isOrganic"
-							onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
-							style={
-								isOrganic
-									? {
-										color: "var(--green-text)",
-									}
-									: { color: "var(--gray-text)" }
-							}
-						>
-							Organic fruits
-						</a>
-					</menu>
+				return (<menu className={styles.SideMenu_shop}>
+					{categories.map((category, index) => {
+						return <a key={index} name={category.categoryTitle} onClick={handleCategoryClick} style={subMenuStyle(category.categoryTitle)}>{category.categoryTitle}</a>
+					})}
+				</menu>
 				);
 				break;
 			case "vegetables":
-				return (
-					<menu className={styles.SideMenu_shop}>
-						<a
-							name="isGreens"
-							onClick={(e) => handleCategoryClick(e, anchorOneRef)}
-							style={
-								isGreens
-									? {
-										color: "var(--green-text)",
-									}
-									: { color: "var(--gray-text)" }
-							}
-						>
-							Greens
-						</a>
-						<a
-							name="isLeafy"
-							onClick={(e) => handleCategoryClick(e, anchorTwoRef)}
-							style={
-								isLeafy
-									? {
-										color: "var(--green-text)",
-									}
-									: { color: "var(--gray-text)" }
-							}
-						>
-							Leafy
-						</a>
-					</menu>
+				return (<menu className={styles.SideMenu_shop}>
+					{categories.map((category, index) => {
+						return <a key={index} name={category.categoryTitle} onClick={handleCategoryClick} style={subMenuStyle(category.categoryTitle)}>{category.categoryTitle}</a>
+					})}
+				</menu>
 				);
 				break;
 
@@ -222,7 +214,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 				</menu>
 			);
 
-			// * TOP MENU SHOP PAGE **********************************************************************
+			// * TOP MENU SHOPPING PAGE **********************************************************************
 		} else if (pageName === "shop") {
 			return (
 				<menu className={styles.SideMenu_menuTop}>
@@ -243,7 +235,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 					</Link>
 					<Link href="/shop/fruits">
 						<a
-							onClick={handleCategoryClick}
+							// onClick={handleCategoryClick}
 							className={styles.SideMenu_menuTopItemShop}
 							style={
 								menuPage === "fruits"
@@ -260,7 +252,7 @@ function SideMenu({ children, menuPage, page, anchor }) {
 					{menuPage === "fruits" && showSubProduceMenu(menuPage)}
 					<Link href="/shop/vegetables">
 						<a
-							onClick={handleCategoryClick}
+							// onClick={handleCategoryClick}
 							className={styles.SideMenu_menuTopItemShop}
 							style={
 								menuPage === "vegetables"

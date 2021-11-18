@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import Layout from "../../components/Layout";
 import SideMenu from "../../components/SideMenu";
 import styles from "../../styles/css/shop/category.module.css";
@@ -13,37 +13,38 @@ import { produceCategoryData } from "../../data/tempProduceCategoryData"
 function Category({ pageData }) {
 	const [dynamicPageInfo, setDynamicPageInfo] = useState({
 		title: "",
+		slug: "",
+		imgLink: "",
 		categories: [],
 	})
+	const [addItems, setAddItems] = useState({
+		items: {},
+		itemCount: 0,
+	})
+
+	const { title, slug, categories, imgLink } = dynamicPageInfo
 
 	const router = useRouter();
 	const categorySlug = router.query.category;
-	const anchorOneRef = useRef();
-	const anchorTwoRef = useRef();
-	const anchorThreeRef = useRef();
 
-	const categoryAnchor = {
-		anchorOneRef,
-		anchorTwoRef,
-		anchorThreeRef,
-	};
-
-	const { title, categories, imgLink } = dynamicPageInfo
-
-	// * Temporary dynamic data
-	// const categoryAnchor;
+	const anchorRefs = useRef([]);
 
 	useEffect(() => {
 		// todo: get data to load page dynamically - using temp data
 		setDynamicPageInfo(pageData[0])
 	}, [categorySlug, pageData]);
 
+	function handleAddItems(item, itemCount) {
+		setAddItems({ item, itemCount })
+		console.log(addItems.itemCount)
+	}
+
+
 	return (
-		<Layout page="shop">
-			<SideMenu page="shop" menuPage={categorySlug} anchor={categoryAnchor}>
-				{console.log(title)}
+		<Layout page="shop" >
+			<SideMenu page="shop" menuPage={categorySlug} categories={categories} anchor={anchorRefs}>
 				<div className={styles.Category}>
-					<ShopPageHeader menuPage={categorySlug} anchor={categoryAnchor} pageNav={title} />
+					<ShopPageHeader categories={categories} menuPage={slug} anchor={anchorRefs} pageNav={title} />
 
 					<div className={styles.Category_title}>
 						<img src={imgLink} alt={title} />
@@ -53,12 +54,9 @@ function Category({ pageData }) {
 
 					{/* //TODO: Map category list from data */}
 					{categories.map((category, index) => {
-						return <CategoryList category={category} key={index} />
+						return <CategoryList category={category} key={index} anchor={anchorRefs} i={index} handleItems={handleAddItems} />
 					})}
 				</div>
-				{/* <h1 ref={anchorOneRef}>One</h1>
-				<h2 ref={anchorTwoRef}>Two</h2>
-				<h3 ref={anchorThreeRef}>There</h3> */}
 			</SideMenu>
 		</Layout>
 	);

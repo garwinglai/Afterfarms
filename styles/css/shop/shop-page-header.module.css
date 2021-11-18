@@ -1,3 +1,6 @@
+.ShopPageHeader {
+  position: sticky;
+}
 .ShopPageHeader_navigation {
   display: flex;
   align-items: center;
@@ -35,31 +38,32 @@
 @media screen and (max-width: 800px) {
   .ShopPageHeader_categoriesMobile {
     display: flex;
-    margin: 35px 0;
+    margin: 35px 0 25px;
+    padding-left: 55px;
     overflow-x: scroll;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
+    white-space: nowrap;
+    /* position: sticky; */
+    /* position: -webkit-sticky; */
+    /* top: 0; */
   }
 
   .ShopPageHeader_categoriesMobile::-webkit-scrollbar {
     display: none;
   }
 
-  .ShopPageHeader_scroll {
-    position: fixed;
-    background-color: black;
-  }
-
   .Categories_title {
     color: var(--gray-text);
+    text-decoration: none;
     margin-right: 20px;
     border-radius: 20px;
     border: 1px solid gray;
   }
 
-  .ShopPageHeader_categoriesMobile p {
+  .ShopPageHeader_categoriesMobile a {
     margin-right: 20px;
-    white-space: nowrap;
-    padding: 5px;
+    position: sticky;
+    padding: 3px 10px;
   }
 }

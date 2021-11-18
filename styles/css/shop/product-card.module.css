@@ -15,10 +15,23 @@
   margin-bottom: 10px;
 }
 
+.ProductCard_itemPrice {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  justify-content: space-between;
+}
+
 .ProductCard_itemPrice h4,
 .ProductCard_itemPrice p {
   margin: 0;
   padding: 0;
+}
+
+.ProductCard_itemProfileTitle {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
 }
 
 .ProductCard_itemProfileTitle h6,
@@ -55,12 +68,13 @@
 .ProductCard_buttonAddMore p {
   margin: 0;
   padding: 0;
+  flex-grow: 2;
+  text-align: center;
 }
 
 .ProductCard_buttonAddMore button {
-  width: 50px;
+  width: 40px;
   height: fit-content;
-  margin: 0;
 }
 
 @media screen and (min-width: 801px) {
@@ -77,30 +91,24 @@
       0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
       0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
   }
+  @media (hover: hover) {
+    .ProductCard:hover {
+      cursor: pointer;
+    }
 
-  .ProductCard:hover {
-    cursor: pointer;
-  }
-
-  .ProductCard:hover img {
-    transform: scale(1.2);
+    .ProductCard:hover img {
+      transform: scale(1.2);
+    }
   }
 
   .ProductCard_itemProfile {
     padding: 0 10px;
   }
 
-  .ProductCard_itemPrice {
-    display: flex;
-    align-items: center;
-    width: 65%;
-    justify-content: space-between;
-  }
-
   .ProductCard_itemProfileTitle {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin: 20px 0;
   }
 
   .ProductCard_itemProfileTitle h6 {
@@ -113,111 +121,44 @@
   }
 }
 
-/* .ProductCard {
-  width: 200px;
-  height: 325px;
-  margin: 15px 15px 15px 0;
-  border-radius: 15px;
-  border: 1px solid var(--gray-border);
-  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
-} */
-
-/* .ProductCard_bestSeller {
-  background-color: var(--avocado-green);
-  color: var(--avocado-yellow);
-  border-radius: 25px;
-  padding: 0 5px;
-  width: fit-content;
-  height: fit-content;
-  font-size: 12px;
-  font-weight: 200;
-}
-
-.ProductCard img {
-  max-width: 100%;
-  max-height: 100%;
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin: auto;
-  display: block;
-}
-
-.ProductCard_itemDescription {
-  margin-top: 15px;
-  padding: 0 15px;
-}
-
-.ProductCard_itemDescription h5 {
-  margin: 0;
-  color: var(--red-text);
-}
-
-.ProductCard_itemDescription p {
-  margin: 0;
-}
-
-.ProductCard_itemPrice {
-  display: flex;
-  width: 70%;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.ProductCard_itemPrice h4 {
-  margin: 0;
-  padding: 0;
-}
-
-.ProductCard_itemDescription button {
-  height: 35px;
-  margin: 15px 0 0 0;
-}
-
-@media screen and (min-width: 801px) {
+@media screen and (max-width: 800px) {
   .ProductCard {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 200px;
-    height: 325px;
-    margin: 15px 15px 15px 0;
-    border-radius: 15px;
-    border: 1px solid var(--gray-border);
-    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-      0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
-  }
-
-  .ProductCard:hover {
-    cursor: pointer;
-  }
-
-  .ProductCard:hover img {
-    transform: scale(1.2);
-  }
-
-  .ProductCard_itemProfile {
-    padding: 0 10px;
-  }
-
-  .ProductCard_itemProfileTitle {
-    display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    margin: 10px 0;
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   }
 
-  .ProductCard_itemProfileTitle h5 {
-    margin: 0 10px 0 0;
-    padding: 0;
+  .ProduceCard_imageContainer {
+    width: 100%;
   }
 
-  .ProductCard_itemProfileTitle p {
-    margin: 0;
+  .ProductCard_infoContainer {
+    width: 100%;
   }
 
-  .ProductCard img {
-    margin-top: 15px;
+  .ProductCard_itemPrice {
+    justify-content: flex-start;
+    margin-bottom: 20px;
   }
-} */
+
+  .ProductCard_itemPrice h4 {
+    margin-right: 10px;
+  }
+
+  .ProductCard_itemProfileTitle h6 {
+    margin-right: 10px;
+  }
+
+  .ProductCard button {
+    height: 35px;
+  }
+
+  .ProductCard_buttonAddMore button {
+    width: 5%;
+    flex-grow: 1;
+  }
+}
