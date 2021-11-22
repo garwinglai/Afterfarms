@@ -9,8 +9,8 @@ function ShopPageHeader({ categories, menuPage, anchor, pageNav }) {
 		isNonOrganic: false,
 		isLeafy: false,
 		isBroccoli: false,
-	})
-	const [isScroll, setIsScroll] = useState(false)
+	});
+	const [isScroll, setIsScroll] = useState(false);
 
 	const { isOrganic, isNonOrganic, isBroccoli, isLeafy } = isSubMenu;
 	const anchorRefs = anchor.current;
@@ -18,73 +18,93 @@ function ShopPageHeader({ categories, menuPage, anchor, pageNav }) {
 	// * Conditional Styling for fixed Mobile Category Buttons
 	let fixedCategoryButtons = () => {
 		if (isScroll) {
-			return { position: "fixed", top: "0", backgroundColor: "var(--green-bg)", zIndex: "1000", overflowX: "scroll", width: "100%", paddingTop: "10px", paddingBottom: "10px" }
+			return {
+				position: "fixed",
+				top: "0",
+				backgroundColor: "var(--tan-bg)",
+				zIndex: "1000",
+				overflowX: "scroll",
+				width: "100%",
+				paddingTop: "10px",
+				paddingBottom: "10px",
+			};
 		}
-	}
-
+	};
 
 	// * Conditional Styling for Submenu Buttons
 	let subMenuStyle = (categoryName) => {
 		switch (categoryName) {
 			case "Non-organic fruits":
 				if (isNonOrganic) {
-					return { color: "var(--green-text)", backgroundColor: "var(--avocado-yellow)" }
+					return {
+						color: "var(--black)",
+						backgroundColor: "var(--white)",
+					};
 				}
 				break;
 			case "Organic fruits":
 				if (isOrganic) {
-					return { color: "var(--green-text)", backgroundColor: "var(--avocado-yellow)" }
+					return {
+						color: "var(--black)",
+						backgroundColor: "var(--white)",
+					};
 				}
 				break;
 			case "Leafy Greens":
 				if (isLeafy) {
-					return { color: "var(--green-text)", backgroundColor: "var(--avocado-yellow)" }
+					return {
+						color: "var(--black)",
+						backgroundColor: "var(--white)",
+					};
 				}
 				break;
 			case "Broccoli, Cauliflower":
 				if (isBroccoli) {
-					return { color: "var(--green-text)", backgroundColor: "var(--avocado-yellow)" }
+					return {
+						color: "var(--black)",
+						backgroundColor: "var(--white)",
+					};
 				}
 				break;
 			default:
 				break;
 		}
-	}
-
+	};
 
 	useEffect(() => {
 		scrollToComponent = require("react-scroll-to-component");
-		window.addEventListener("scroll", handleScroll)
-		return window.removeEventListener("scroll", handleScroll)
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
 	}, [anchor]);
 
 	// *Handles fixed category to top on scroll
 	function handleScroll() {
 		if (window.scrollY > 150) {
-			setIsScroll(true)
+			setIsScroll(true);
 		} else {
-			setIsScroll(false)
+			setIsScroll(false);
 		}
 	}
 
-
 	// *Scroll to each category on click
 	function scrollToCategory(categoryName) {
-		anchorRefs.map(anchor => {
-			if (anchor.innerHTML === categoryName) {
-				scrollToComponent(anchor, {
-					offset: 150,
-					align: "middle",
-					duration: 100,
-					ease: "inCirc",
-				});
+		anchorRefs.map((anchor) => {
+			if (anchor) {
+				if (anchor.innerHTML === categoryName) {
+					scrollToComponent(anchor, {
+						offset: 150,
+						align: "middle",
+						duration: 100,
+						ease: "inCirc",
+					});
+				}
 			}
-		})
+		});
 	}
 
 	function handleCategoryClick(e) {
 		const { name } = e.target;
-		scrollToCategory(name)
+		scrollToCategory(name);
 
 		// *Manage Active colors for submenu
 		switch (name) {
@@ -137,46 +157,63 @@ function ShopPageHeader({ categories, menuPage, anchor, pageNav }) {
 	function showMobileHorizontalMenu(menuPageName) {
 		switch (menuPageName) {
 			case "fruits":
-				return <div style={fixedCategoryButtons()}>
-
-					<div className={styles.ShopPageHeader_categoriesMobile} style={isScroll ? { margin: "0" } : undefined}>
-						{categories.map((category, index) => {
-							return <a
-								key={index}
-								name={category.categoryTitle}
-								onClick={handleCategoryClick}
-								className={styles.Categories_title}
-								style={subMenuStyle(category.categoryTitle)}
-							>
-								{category.categoryTitle}
-							</a>
-						})}
+				return (
+					<div
+						className={styles.fixedCategoryButtons}
+						style={fixedCategoryButtons()}
+					>
+						<div
+							className={styles.ShopPageHeader_categoriesMobile}
+							style={isScroll ? { margin: "0" } : undefined}
+						>
+							{categories.map((category, index) => {
+								return (
+									<a
+										key={index}
+										name={category.categoryTitle}
+										onClick={handleCategoryClick}
+										className={styles.Categories_title}
+										style={subMenuStyle(category.categoryTitle)}
+									>
+										{category.categoryTitle}
+									</a>
+								);
+							})}
+						</div>
 					</div>
-				</div>
+				);
 
 				break;
 			case "vegetables":
-				return <div style={fixedCategoryButtons()}>
-					<div className={styles.ShopPageHeader_categoriesMobile} style={isScroll ? { margin: "0" } : undefined}>
-						{categories.map((category, index) => {
-							return <a
-								key={index}
-								name={category.categoryTitle}
-								onClick={handleCategoryClick}
-								className={styles.Categories_title}
-								style={subMenuStyle(category.categoryTitle)}
-							>
-								{category.categoryTitle}
-							</a>
-						})}
+				return (
+					<div
+						className={styles.fixedCategoryButtons}
+						style={fixedCategoryButtons()}
+					>
+						<div
+							className={styles.ShopPageHeader_categoriesMobile}
+							style={isScroll ? { margin: "0" } : undefined}
+						>
+							{categories.map((category, index) => {
+								return (
+									<a
+										key={index}
+										name={category.categoryTitle}
+										onClick={handleCategoryClick}
+										className={styles.Categories_title}
+										style={subMenuStyle(category.categoryTitle)}
+									>
+										{category.categoryTitle}
+									</a>
+								);
+							})}
+						</div>
 					</div>
-				</div>
+				);
 				break;
 			default:
 				break;
 		}
-
-
 	}
 
 	return (

@@ -1,69 +1,73 @@
-.ShopPageHeader {
-  position: sticky;
-}
 .ShopPageHeader_navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: fit-content;
-  padding-left: 30px;
-  margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: fit-content;
+	padding-left: 30px;
+	margin-top: 30px;
 }
 
 .ShopPageHeader i {
-  color: gray;
-  font-size: 18px;
-  margin-right: 5px;
+	color: gray;
+	font-size: 18px;
+	margin-right: 5px;
 }
 
 .ShopPageHeader a {
-  font-size: 18px;
-  margin-right: 5px;
+	font-size: 18px;
+	margin-right: 5px;
 }
 
 .ShopPageHeader p {
-  margin: 0;
-  padding: 0;
-  height: auto;
-  font-size: 18px;
-  margin-right: 5px;
+	margin: 0;
+	padding: 0;
+	height: auto;
+	font-size: 18px;
+	margin-right: 5px;
 }
 
 @media screen and (min-width: 801px) {
-  .ShopPageHeader_categoriesMobile {
-    display: none;
-  }
+	.ShopPageHeader_categoriesMobile {
+		display: none;
+	}
+
+	.fixedCategoryButtons {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 800px) {
-  .ShopPageHeader_categoriesMobile {
-    display: flex;
-    margin: 35px 0 25px;
-    padding-left: 55px;
-    overflow-x: scroll;
-    overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none;
-    white-space: nowrap;
-    /* position: sticky; */
-    /* position: -webkit-sticky; */
-    /* top: 0; */
-  }
+	.ShopPageHeader {
+		background-color: var(--tan-bg);
+		padding: 20px 0 5px 0;
+		margin-bottom: 20px;
+	}
 
-  .ShopPageHeader_categoriesMobile::-webkit-scrollbar {
-    display: none;
-  }
+	.ShopPageHeader_categoriesMobile {
+		display: flex;
+		margin: 35px 0 25px;
+		padding-left: 55px;
+		overflow-x: scroll;
+		overflow: -moz-scrollbars-none;
+		-ms-overflow-style: none;
+		white-space: nowrap;
+	}
 
-  .Categories_title {
-    color: var(--gray-text);
-    text-decoration: none;
-    margin-right: 20px;
-    border-radius: 20px;
-    border: 1px solid gray;
-  }
+	.ShopPageHeader_categoriesMobile::-webkit-scrollbar {
+		display: none;
+	}
 
-  .ShopPageHeader_categoriesMobile a {
-    margin-right: 20px;
-    position: sticky;
-    padding: 3px 10px;
-  }
+	.Categories_title {
+		color: var(--gray-text);
+		text-decoration: none;
+		margin-right: 20px;
+		border-radius: 20px;
+		border: 1px solid gray;
+	}
+
+	.ShopPageHeader_categoriesMobile a {
+		margin-right: 20px;
+		position: sticky;
+		padding: 3px 10px;
+	}
 }

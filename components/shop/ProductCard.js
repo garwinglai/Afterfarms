@@ -1,85 +1,136 @@
-import React, { useState } from 'react'
-import styles from "../../styles/css/shop/product-card.module.css"
+import React, { useState } from "react";
+import styles from "../../styles/css/shop/product-card.module.css";
+import ProductPopUp from "./ProductPopUp";
+import ClickAwayListener from "@mui/core/ClickAwayListener";
 
 function ProductCard({ item, handleItems }) {
-  const [isItemAdded, setIsItemAdded] = useState(false)
-  const [itemAddCount, setItemAddCount] = useState(1)
+	const [isItemAdded, setIsItemAdded] = useState(false);
+	const [itemAddCount, setItemAddCount] = useState(1);
+	const [showProductDetail, setShowProductDetail] = useState(false);
 
-  const { name, ourPrice, marketPrice, discount, bestSeller, imgLinks } = item
+	const { name, ourPrice, marketPrice, discount, bestSeller, imgLinks } = item;
 
-  function handleAddItemClick(e, item) {
-    const { name } = e.target
+	function handleViewItemDetail() {
+		setShowProductDetail(!showProductDetail);
+	}
 
-    switch (name) {
-      case "addItemButton":
-        setIsItemAdded(!isItemAdded)
-        handleItems(item, itemAddCount)
-        break;
-      case "plusButton":
-        setItemAddCount(itemAddCount + 1)
-        handleItems(item, itemAddCount)
-        break;
-      case "minusButton":
-        if (itemAddCount > 1) {
-          setItemAddCount(itemAddCount - 1)
-          handleItems(item, itemAddCount)
-        } else {
-          setIsItemAdded(!isItemAdded)
-          handleItems(item, itemAddCount)
-        }
-        break;
-      default:
-        break;
-    }
-  }
+	function handleAddItemClick(e, item) {
+		const { name } = e.target;
 
-  function showBestSeller() {
-    return <p id={styles.bestSeller} className={styles.ProductCard_bestSeller}>Best Seller</p>
-  }
+		switch (name) {
+			case "addItemButton":
+				setIsItemAdded(!isItemAdded);
+				// handleItems(item, itemAddCount)
+				break;
+			case "plusButton":
+				setItemAddCount(itemAddCount + 1);
+				// handleItems(item, itemAddCount)
+				break;
+			case "minusButton":
+				if (itemAddCount > 1) {
+					setItemAddCount(itemAddCount - 1);
+					// handleItems(item, itemAddCount)
+				} else {
+					setIsItemAdded(!isItemAdded);
+					// handleItems(item, itemAddCount)
+				}
+				break;
+			default:
+				break;
+		}
+	}
 
-  function showAddItemButton() {
-    if (!isItemAdded) {
-      return <button name="addItemButton" onClick={(e) => handleAddItemClick(e, item)}>Add</button>
-    } else {
-      return <div className={styles.ProductCard_buttonAddMore}>
-        <button name="minusButton" onClick={(e) => handleAddItemClick(e, item)}>-</button>
-        <p>{itemAddCount}</p>
-        <button name="plusButton" onClick={(e) => handleAddItemClick(e, item)}>+</button>
-      </div>
-    }
-  }
+	function showBestSeller() {
+		return (
+			<p id={styles.bestSeller} className={styles.ProductCard_bestSeller}>
+				Best Seller
+			</p>
+		);
+	}
 
-  return (
-    <div className={styles.ProductCard}>
+	function showAddItemButton() {
+		if (!isItemAdded) {
+			return (
+				<button
+					name="addItemButton"
+					onClick={(e) => handleAddItemClick(e, item)}
+				>
+					Add
+				</button>
+			);
+		} else {
+			return (
+				<div className={styles.ProductCard_buttonAddMore}>
+					<button
+						name="minusButton"
+						onClick={(e) => handleAddItemClick(e, item)}
+					>
+						-
+					</button>
+					<p>{itemAddCount}</p>
+					<button
+						name="plusButton"
+						onClick={(e) => handleAddItemClick(e, item)}
+					>
+						+
+					</button>
+				</div>
+			);
+		}
+	}
 
-      {/* //* Product Card image */}
-      <div className={styles.ProduceCard_imageContainer}>
-        <img src={imgLinks[0]} alt={name} />
-      </div>
+	return (
+		<div className={styles.ProductCard}>
+			{/* //* Product Card image */}
+			<div className={styles.ProduceCard_imageContainer}>
+				<img
+					className={styles.ProductCard_img}
+					src={imgLinks[0]}
+					alt={name}
+					onClick={handleViewItemDetail}
+				/>
+			</div>
 
-      <div className={styles.ProductCard_infoContainer}>
-        <div className={styles.ProductCard_itemProfile}>
-          {/* //* Product Card Description Right */}
-          <div className={styles.ProductCard_itemDescription}>
-            <h5> {discount}</h5>
-            <div className={styles.ProductCard_itemPrice}>
-              <h4>{ourPrice}</h4>
-              <p style={{ textDecoration: "line-through", color: "var(--gray-text)" }}>{marketPrice}</p>
-            </div>
-          </div>
+			<div className={styles.ProductCard_infoContainer}>
+				<div className={styles.ProductCard_itemProfile}>
+					{/* //* Product Card Description Right */}
+					<div className={styles.ProductCard_itemDescription}>
+						<h5> {discount}</h5>
+						<div className={styles.ProductCard_itemPrice}>
+							<h4>{ourPrice}</h4>
+							<p
+								style={{
+									textDecoration: "line-through",
+									color: "var(--gray-text)",
+								}}
+							>
+								{marketPrice}
+							</p>
+						</div>
+					</div>
 
-          {/* //* Product Card Title */}
-          <div className={styles.ProductCard_itemProfileTitle}>
-            <h6>{name}</h6>
-            {bestSeller && showBestSeller()}
-          </div>
-        </div>
+					{/* //* Product Card Title */}
+					<div className={styles.ProductCard_itemProfileTitle}>
+						<h6>{name}</h6>
+						{bestSeller && showBestSeller()}
+					</div>
+				</div>
 
-        {/* //* Product Card Button */}
-        {showAddItemButton()}
-      </div>
-    </div>
-  )
+				{/* //* Product Card Button */}
+				{showAddItemButton()}
+			</div>
+			{showProductDetail && (
+				<div className={styles.ItemDetail_container}>
+					<div className={styles.ItemDetail_background}></div>
+					<ClickAwayListener onClickAway={handleViewItemDetail}>
+						<div>
+							<ProductPopUp closePopUp={handleViewItemDetail} item={item} />
+						</div>
+					</ClickAwayListener>
+				</div>
+			)}
+		</div>
+	);
 }
 
-export default ProductCard
+export default ProductCard;

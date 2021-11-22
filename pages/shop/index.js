@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
 import Layout from "../../components/Layout";
 import styles from "../../styles/css/shop/shop.module.css";
-import SideMenu from "../../components/SideMenu";
+import ShopMenu from "../../components/shop/ShopMenu";
+import OurPicksComponent from "../../components/shop/OurPicks/OurPicksComponent";
 
 function Shop() {
+	let testRef = useRef([]);
+
+	const tempOurPicksArr = [1, 2, 3];
+	const tempTitles = ["Best Sellers", "New Arrivals", "Seasonal"];
+
+	console.log(tempOurPicksArr.length);
+
 	return (
 		<Layout page="shop">
-			<SideMenu menuPage="shop" page="shop" anchor="undefined">
+			<div className={styles.Shop_container}>
+				<ShopMenu menuPage="shop" anchor={testRef} />
 				<div className={styles.Shop}>
-					<h1>Our Picks</h1>
+					{tempOurPicksArr.map((pick, index) => {
+						console.log(index);
+						return (
+							<OurPicksComponent
+								key={index}
+								idx={index}
+								anchor={testRef}
+								title={tempTitles[index]}
+							/>
+						);
+					})}
 				</div>
-			</SideMenu>
+			</div>
 		</Layout>
 	);
 }

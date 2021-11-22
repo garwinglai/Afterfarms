@@ -1,0 +1,142 @@
+.OurPicksProductCard_img {
+	max-width: 100%;
+	max-height: 100%;
+	width: 100px;
+	height: 100px;
+	object-fit: contain;
+	margin: 0 auto;
+	display: block;
+}
+
+.OurPicksProductCard_itemDescription h5 {
+	margin: 0;
+	font-size: 20px;
+	color: var(--red-text);
+	margin-bottom: 10px;
+}
+
+.OurPicksProductCard_itemPrice {
+	display: flex;
+	align-items: center;
+	width: 65%;
+	gap: 10px;
+	/* justify-content: space-between; */
+}
+
+.OurPicksProductCard_itemPrice h4,
+.OurPicksProductCard_itemPrice p {
+	margin: 0;
+	padding: 0;
+}
+
+.OurPicksProductCard_itemProfileTitle {
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+}
+
+.OurPicksProductCard_itemProfileTitle h6,
+.OurPicksProductCard_itemProfileTitle p {
+	margin: 0;
+	padding: 0;
+}
+
+.OurPicksProductCard_itemProfileTitle h6 {
+	font-size: 15px;
+	color: var(--gray-text);
+}
+
+.OurPicksProductCard_bestSeller {
+	background-color: var(--avocado-green);
+	color: var(--white);
+	border-radius: 25px;
+	width: fit-content;
+	height: fit-content;
+	font-size: 15px;
+	font-weight: 400;
+	box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+		0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+		0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+.OurPicksProductCard_itemProfileTitle p {
+	padding: 0 10px;
+}
+
+.OurPicksProductCard_buttonAddMore {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.OurPicksProductCard_buttonAddMore p {
+	margin: 0;
+	padding: 0;
+	flex-grow: 2;
+	text-align: center;
+}
+
+.OurPicksProductCard_buttonAddMore button {
+	width: 40px;
+	height: fit-content;
+}
+
+@media screen and (min-width: 801px) {
+	.OurPicksProductCard {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		width: 200px;
+		margin: 15px 15px 15px 0;
+		border-radius: 15px;
+		border: 1px solid var(--gray-border);
+		height: 350px;
+		box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+			0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+			0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+	}
+
+	@media (hover: hover) {
+		.OurPicksProductCard_img:hover {
+			cursor: pointer;
+			transform: scale(1.2);
+		}
+	}
+
+	.OurPicksProductCard_itemProfile {
+		padding: 0 10px;
+	}
+
+	.OurPicksProductCard_itemProfileTitle {
+		display: flex;
+		align-items: center;
+		margin: 20px 0;
+	}
+
+	.OurPicksProductCard_itemProfileTitle h6 {
+		margin-right: 10px;
+	}
+
+	.OurPicksProductCard button {
+		margin: 0 10px;
+		height: 40px;
+	}
+
+	.ItemDetail_container {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.ItemDetail_background {
+		background-color: black;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0.45;
+	}
+}

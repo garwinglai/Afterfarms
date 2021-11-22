@@ -1,420 +1,423 @@
 .body_title i {
-  font-size: 30px;
-  border-radius: 50%;
-  /* height: 35px; */
-  text-align: center;
-  padding: 5px 11px;
-  color: white;
-  background-color: var(--avocado-green-med);
-  transform: rotate(-20deg);
+	font-size: 30px;
+	border-radius: 50%;
+	/* height: 35px; */
+	text-align: center;
+	padding: 5px 11px;
+	color: white;
+	background-color: var(--avocado-green-med);
+	transform: rotate(-20deg);
 }
 
 .MuiIcon {
-  font-size: 30px;
-  padding: 5px 5px;
+	font-size: 30px;
+	padding: 5px 5px;
 }
 
 .ShoppingCartIcon {
-  background-color: var(--avocado-brown-med);
-  color: white;
-  border-radius: 50%;
-  /* transform: rotate(5deg); */
+	background-color: var(--avocado-brown-med);
+	color: white;
+	border-radius: 50%;
+	/* transform: rotate(5deg); */
 }
 
 .SettingsIcon {
-  transform: rotate(30deg);
-  color: white;
-  border-radius: 50%;
-  background-color: var(--avocado-green-med);
+	transform: rotate(30deg);
+	color: white;
+	border-radius: 50%;
+	background-color: var(--avocado-green-med);
 }
 .ShareIcon {
-  border-radius: 50%;
-  background-color: var(--avocado-brown-med);
-  color: white;
+	border-radius: 50%;
+	background-color: var(--avocado-brown-med);
+	color: white;
 }
 
 .HelpCenter_bodyContainer {
-  padding-top: 50px;
+	padding-top: 50px;
 }
 
 .HelpCenter_bodyContainer i {
-  font-size: 50px;
+	font-size: 50px;
 }
 
 .HelpCenter_bodyContainer section {
-  padding: 10px 0 20px;
+	padding: 10px 0 20px;
 }
 
 .NeedHelp_container {
-  margin-top: 70px;
-  margin-left: 10px;
+	margin-top: 70px;
+	margin-left: 10px;
 }
 
 .NeedHelp_bodyContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 5px 30px 20px;
-  margin-left: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 5px 30px 20px;
+	margin-left: 10px;
 }
 
 .NeedHelp_bodyContainer a {
-  padding-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 @media screen and (min-width: 801px) {
-  /* * Header Description ------------------- */
-  .Dashboard {
-    width: 95%;
-    height: auto;
-    /* height: 100%; */
-    /* background-color: black; */
-  }
+	/* * Header Description ------------------- */
+	.Dashboard {
+		width: 100%;
+		box-sizing: border-box;
+		padding-right: 55px;
+		height: auto;
+	}
 
-  .Dashboard_header {
-    padding: 45px 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+	.Dashboard_header {
+		padding: 45px 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 
-  .Header_left h5 {
-    margin: 0;
-    padding-bottom: 20px;
-  }
+	.Header_left h5 {
+		margin: 0;
+		padding-bottom: 20px;
+	}
 
-  .Header_left h1 {
-    margin: 0;
-  }
+	.Header_left h1 {
+		margin: 0;
+	}
 
-  .Dashboard_header button {
-    display: none;
-  }
+	.Dashboard_header button {
+		display: none;
+	}
 
-  /* * Shopping Window Information  ------------------- */
+	/* * Shopping Window Information  ------------------- */
 
-  .Dashboard_deliveryContainer {
-    background-color: var(--white);
-    width: 100%;
-    padding: 10px 0 50px;
-    border-radius: 20px;
-    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-      0 8px 8px hsl(0deg 0% 0% / 0.075);
-  }
+	.Dashboard_deliveryContainer {
+		background-color: var(--white);
+		width: 100%;
+		padding: 10px 0 50px;
+		box-sizing: border-box;
+		border-radius: 20px;
+		box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+			0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+			0 8px 8px hsl(0deg 0% 0% / 0.075);
+	}
 
-  .Dashboard_deliveryContainer h4 {
-    margin-left: 20px;
-  }
+	.Dashboard_deliveryContainer h4 {
+		margin-left: 20px;
+	}
 
-  .Dashboard_shoppingInfo {
-    /* background-color: lightblue; */
-    display: flex;
-    justify-content: space-between;
-  }
+	.Dashboard_shoppingInfo {
+		/* background-color: lightblue; */
+		display: flex;
+		justify-content: space-between;
+	}
 
-  /* ? Shopping Info Left ----------- */
+	/* ? Shopping Info Left ----------- */
 
-  .ShoppingInfo_left {
-    width: 50%;
-    margin-right: 20px;
-    padding: 0 15px;
-    margin-left: 20px;
-    border: 1px solid var(--gray-border);
-    border-radius: 10px;
-  }
+	.ShoppingInfo_left {
+		width: 50%;
+		/* margin-right: 20px; */
+		padding: 0 15px;
+		margin-left: 10px;
+		border: 1px solid var(--gray-border);
+		border-radius: 10px;
+	}
 
-  .ShoppingInfo_left p {
-    color: var(--gray-text);
-  }
+	.ShoppingInfo_left p {
+		color: var(--gray-text);
+	}
 
-  .Delivery_title button {
-    display: none;
-  }
+	.Delivery_title button {
+		display: none;
+	}
 
-  .ShoppingInfo_nextDelivery {
-    display: flex;
-    justify-content: space-between;
-  }
+	.ShoppingInfo_nextDelivery {
+		display: flex;
+		justify-content: space-between;
+	}
 
-  .ShoppingInfo_shoppingWindow {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+	.ShoppingInfo_shoppingWindow {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
 
-  .ShoppingInfo_description {
-    text-align: right;
-  }
+	.ShoppingInfo_description {
+		text-align: right;
+	}
 
-  .ShoppingInfo_shoppingAvailability {
-    text-align: center;
-  }
+	.ShoppingInfo_shoppingAvailability {
+		text-align: center;
+	}
 
-  /* ? Shopping Info Right ----------- */
-  .ShoppingInfo_right {
-    width: 50%;
-    margin-left: 20px;
-    padding-right: 25px;
-  }
+	/* ? Shopping Info Right ----------- */
+	.ShoppingInfo_right {
+		width: 50%;
+		margin-left: 20px;
+		margin-right: 15px;
+	}
 
-  .ShoppingInfo_right p {
-    color: var(--secondary-text);
-  }
+	.ShoppingInfo_right p {
+		color: var(--secondary-text);
+	}
 
-  .ShoppingInfo_right button {
-    margin-top: 70px;
-    width: 100%;
-  }
+	.ShoppingInfo_right button {
+		margin-top: 70px;
+		width: 100%;
+	}
 
-  /* * Misc Account Info & Help Center Info  ------------------- */
+	/* * Misc Account Info & Help Center Info  ------------------- */
 
-  .Dashboard_miscAndHelpContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    width: 100%;
-  }
+	.Dashboard_miscAndHelpContainer {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 20px;
+		width: 100%;
+	}
 
-  .Dashboard_miscAndHelpContainer p {
-    line-height: 2em;
-  }
+	.Dashboard_miscAndHelpContainer p {
+		line-height: 2em;
+	}
 
-  /* ? Left Side Misc Account Info --------------  */
+	/* ? Left Side Misc Account Info --------------  */
 
-  .MiscContainer {
-    width: 60%;
-  }
+	.MiscContainer {
+		width: 50%;
+	}
 
-  .MiscContainer button {
-    background-color: transparent;
-  }
+	.Misc_bodyContainers {
+		margin-right: 10px;
+		padding-right: 50px;
+	}
 
-  .MiscContainer button:hover {
-    background-color: var(--avocado-brown-med);
-  }
+	.MiscContainer button {
+		background-color: transparent;
+	}
 
-  .MiscContainer p {
-    color: var(--gray-text);
-  }
+	.MiscContainer button:hover {
+		background-color: var(--avocado-brown-med);
+	}
 
-  .body {
-    background-color: white;
-    /* margin: 10px; */
-    padding: 10px;
-    /* margin-right: 20px; */
-    border-radius: 20px;
-    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-      0 8px 8px hsl(0deg 0% 0% / 0.075);
-  }
+	.MiscContainer p {
+		color: var(--gray-text);
+	}
 
-  .body_title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+	.body {
+		background-color: white;
+		padding: 25px;
+		border-radius: 20px;
+		box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+			0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+			0 8px 8px hsl(0deg 0% 0% / 0.075);
+	}
 
-  .body_title h4 {
-    margin: 0;
-  }
+	.body_title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 
-  .UserCode {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+	.body_title h4 {
+		margin: 0;
+	}
 
-  .UserCode p {
-    overflow-x: scroll;
-    /* text-overflow: scroll; */
-    white-space: nowrap;
-    width: 100%;
-  }
-  .UserCode button {
-    width: 30%;
-  }
+	.UserCode {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-  /* ? Right Side | Help Center Info ------------------ */
-  .HelpCenterContainer {
-    width: 100%;
-    /* padding: 10px 10px; */
-  }
+	.UserCode p {
+		overflow-x: scroll;
+		/* text-overflow: scroll; */
+		white-space: nowrap;
+		width: 100%;
+	}
+	.UserCode button {
+		width: 30%;
+	}
 
-  .HelpCenterContainer h5 {
-    color: var(--secondary-text);
-  }
+	/* ? Right Side | Help Center Info ------------------ */
+	.HelpCenterContainer {
+		width: 50%;
+		/* padding: 10px 10px; */
+	}
 
-  .HelpCenterContainer p {
-    color: var(--gray-text);
-  }
+	.HelpCenterContainer h5 {
+		color: var(--secondary-text);
+	}
 
-  .HelpCenter_bodyContainer {
-    background-color: white;
-    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-      0 8px 8px hsl(0deg 0% 0% / 0.075);
-    border-radius: 20px;
-    padding: 5px 30px 20px;
-    margin-left: 10px;
-  }
+	.HelpCenterContainer p {
+		color: var(--gray-text);
+	}
+
+	.HelpCenter_bodyContainer {
+		background-color: white;
+		box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+			0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+			0 8px 8px hsl(0deg 0% 0% / 0.075);
+		border-radius: 20px;
+		padding: 5px 15px;
+	}
 }
 
 @media screen and (max-width: 801px) {
-  .Dashboard {
-    padding: 0 30px;
-    background-color: var(--tan-bg);
-  }
+	.Dashboard {
+		padding: 0 30px;
+		background-color: var(--tan-bg);
+	}
 
-  /* * Dashboard header ------------------- */
+	/* * Dashboard header ------------------- */
 
-  .Dashboard_header {
-    width: auto;
-    padding-top: 60px;
-    margin-bottom: 40px;
-    border-bottom: 3px solid black;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+	.Dashboard_header {
+		width: auto;
+		padding-top: 60px;
+		margin-bottom: 40px;
+		border-bottom: 3px solid black;
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
 
-  .Header_left {
-    /* width: 70%; */
-  }
+	.Header_left {
+		/* width: 70%; */
+	}
 
-  .Dashboard_header h5 {
-    margin: 0;
-  }
+	.Dashboard_header h5 {
+		margin: 0;
+	}
 
-  .Dashboard_header h1 {
-    font-size: 35px;
-  }
+	.Dashboard_header h1 {
+		font-size: 35px;
+	}
 
-  .Dashboard_header button {
-    display: none;
-    /* margin-bottom: 28px;
+	.Dashboard_header button {
+		display: none;
+		/* margin-bottom: 28px;
 		width: auto;
 		height: 100%; */
-  }
+	}
 
-  .Dashboard_deliveryContainer h4 {
-    font-size: 20px;
-    margin: 0 0 15px;
-  }
+	.Dashboard_deliveryContainer h4 {
+		font-size: 20px;
+		margin: 0 0 15px;
+	}
 
-  /* ? Left Shopping Container ------------------- */
+	/* ? Left Shopping Container ------------------- */
 
-  .ShoppingInfo_left {
-    border-radius: 15px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
-  }
+	.ShoppingInfo_left {
+		border-radius: 15px;
+		background-color: white;
+		padding: 20px;
+		box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+			0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
+	}
 
-  .ShoppingInfo_left p {
-    color: var(--gray-text);
-  }
+	.ShoppingInfo_left p {
+		color: var(--gray-text);
+	}
 
-  .Delivery_title {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
+	.Delivery_title {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin-bottom: 20px;
+	}
 
-  .Delivery_title button {
-    margin: 0;
-    width: auto;
-  }
+	.Delivery_title button {
+		margin: 0;
+		width: auto;
+	}
 
-  .ShoppingInfo_nextDelivery {
-    display: flex;
-    justify-content: space-between;
-  }
+	.ShoppingInfo_nextDelivery {
+		display: flex;
+		justify-content: space-between;
+	}
 
-  .ShoppingInfo_shoppingWindow {
-    display: flex;
-    justify-content: space-between;
-  }
+	.ShoppingInfo_shoppingWindow {
+		display: flex;
+		justify-content: space-between;
+	}
 
-  .ShoppingInfo_description {
-    text-align: right;
-  }
+	.ShoppingInfo_description {
+		text-align: right;
+	}
 
-  .ShoppingInfo_shoppingAvailability {
-    text-align: center;
-  }
+	.ShoppingInfo_shoppingAvailability {
+		text-align: center;
+	}
 
-  /* ? Right Shopping Container ------------------- */
+	/* ? Right Shopping Container ------------------- */
 
-  .ShoppingInfo_right {
-    margin-top: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column-reverse;
-  }
+	.ShoppingInfo_right {
+		margin-top: 10px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column-reverse;
+	}
 
-  .ShoppingInfo_right p {
-    color: var(--gray-text);
-  }
+	.ShoppingInfo_right p {
+		color: var(--gray-text);
+	}
 
-  /* * MISC & Help Center Container ------------------- */
+	/* * MISC & Help Center Container ------------------- */
 
-  .Dashboard_miscAndHelpContainer p {
-    color: var(--gray-text);
-  }
+	.Dashboard_miscAndHelpContainer p {
+		color: var(--gray-text);
+	}
 
-  .Dashboard_miscAndHelpContainer h4 {
-    font-size: 22px;
-  }
+	.Dashboard_miscAndHelpContainer h4 {
+		font-size: 22px;
+	}
 
-  /* ? Misc Container ------------------- */
+	/* ? Misc Container ------------------- */
 
-  .MiscContainer button {
-    background-color: transparent;
-  }
+	.MiscContainer button {
+		background-color: transparent;
+	}
 
-  .MiscContainer button:active {
-    opacity: 1;
-    background-color: var(--avocado-brown-dark);
-    color: var(--avocado-yellow);
-  }
+	.MiscContainer button:active {
+		opacity: 1;
+		background-color: var(--avocado-brown-dark);
+		color: var(--avocado-yellow);
+	}
 
-  .Misc_bodyContainers {
-    margin-bottom: 60px;
-  }
+	.Misc_bodyContainers {
+		margin-bottom: 60px;
+	}
 
-  .body {
-    background-color: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
-  }
+	.body {
+		background-color: white;
+		padding: 25px;
+		border-radius: 15px;
+		box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+			0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
+	}
 
-  .body_title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+	.body_title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 
-  .body_title h4 {
-    margin: 0;
-  }
+	.body_title h4 {
+		margin: 0;
+	}
 
-  .UserCode button {
-    margin-bottom: 25px;
-  }
+	.UserCode button {
+		margin-bottom: 25px;
+	}
 
-  /* ? Help Center Container ------------------- */
+	/* ? Help Center Container ------------------- */
 
-  .HelpCenter_bodyContainer {
-    background-color: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
-  }
+	.HelpCenter_bodyContainer {
+		background-color: white;
+		padding: 25px;
+		border-radius: 15px;
+		box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+			0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
+	}
 }

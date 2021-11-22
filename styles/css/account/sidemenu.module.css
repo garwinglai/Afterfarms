@@ -1,125 +1,92 @@
-.SideMenuLayout {
-  height: fit-content;
-}
-
 .SideMenu {
-  background-color: var(--tanner-bg);
+	background-color: var(--tanner-bg);
+	padding-bottom: 200px;
 }
 
 @media screen and (min-width: 801px) {
-  .SideMenu {
-    display: flex;
-    padding-top: 80px;
-  }
+	.SideMenu {
+		display: flex;
+		justify-content: center;
+		padding-top: 80px;
+	}
 
-  .SideMenu_pageContainer {
-    width: 80%;
-  }
+	.SideMenu_pageContainer {
+		width: 70%;
+		overflow: hidden;
+	}
 
-  .SideMenu_menuContainer {
-    padding: 100px 30px 0 40px;
-    width: 20%;
-    position: absolute;
-  }
+	.SideMenu_menuContainer {
+		padding: 0 10px 0 40px;
+		margin: 0 25px;
+		width: 20%;
+	}
 
-  .SideMenu_menuTemplate {
-    padding: 0 30px 0 40px;
-    width: 20%;
-    height: 100vh;
-  }
+	.SideMenu_menuTop {
+		display: flex;
+		flex-direction: column;
+		border-top: 1px solid var(--gray-border);
+		border-bottom: 1px solid var(--gray-border);
+		text-decoration: none;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 
-  .SideMenu_shop {
-    padding: 0 0 0 15px;
-    margin: 10px 0;
-  }
-  .SideMenu_shop a {
-    display: block;
-    text-decoration: none;
-    color: var(--gray-text);
-    margin-bottom: 10px;
-  }
+	.SideMenu_menuTopItem {
+		padding: 10px;
+		text-decoration: none;
+		color: var(--black);
+		font-size: 18px;
+		font-weight: 600;
+		font-family: "Merriweather Sans", sans-serif;
+	}
 
-  .SideMenu_shop a:hover {
-    cursor: pointer;
-    color: var(--green-text) !important;
-  }
+	.SideMenu_menuBottomItem:active {
+		color: var(--avocado-green);
+	}
 
-  .SideMenu_menuTop {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid var(--gray-border);
-    border-bottom: 1px solid var(--gray-border);
-    text-decoration: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+	.SideMenu_menuBottomItem:focus {
+		color: var(--avocado-green);
+	}
 
-  .SideMenu_menuTopItem {
-    padding: 10px 0;
-    text-decoration: none;
-    color: var(--black);
-    font-size: 18px;
-    font-weight: 600;
-    font-family: "Merriweather Sans", sans-serif;
-  }
+	.SideMenu_menuBottom {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0;
+	}
 
-  .SideMenu_menuTopItemShop {
-    text-decoration: none;
-    padding: 5px 0;
-    font-weight: 500;
-  }
+	.SideMenu_menuBottomItem {
+		padding: 10px 0;
+		text-decoration: none;
+		color: var(--black);
+		font-size: 18px;
+		font-weight: 600;
+		font-family: "Merriweather Sans", sans-serif;
+	}
 
-  .SideMenu_menuTopItemShopCategory {
-    margin: 0;
-  }
+	.SideMenu_menuBottom button {
+		height: 45px;
+		background-color: transparent;
+		border: none;
+		text-align: left;
+		padding-left: 0;
+		font-weight: 400;
+		margin-top: 0;
+	}
 
-  .SideMenu_menuBottomItem:active {
-    color: var(--avocado-green);
-  }
-
-  .SideMenu_menuBottomItem:focus {
-    color: var(--avocado-green);
-  }
-
-  .SideMenu_menuBottom {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
-  }
-
-  .SideMenu_menuBottomItem {
-    padding: 10px 0;
-    text-decoration: none;
-    color: var(--black);
-    font-size: 18px;
-    font-weight: 600;
-    font-family: "Merriweather Sans", sans-serif;
-  }
-
-  .SideMenu_menuBottom button {
-    height: 45px;
-    background-color: transparent;
-    border: none;
-    text-align: left;
-    padding-left: 0;
-    font-weight: 400;
-    margin-top: 0;
-  }
-
-  .SideMenu_menuBottom button:hover {
-    background-color: transparent;
-    color: black;
-  }
+	.SideMenu_menuBottom button:hover {
+		background-color: transparent;
+		color: black;
+	}
 }
 
 @media screen and (max-width: 800px) {
-  .SideMenu {
-    padding-top: 70px;
-    padding-bottom: 70px;
-    background-color: white;
-  }
+	.SideMenu {
+		padding-top: 70px;
+		padding-bottom: 70px;
+		background-color: white;
+	}
 
-  .SideMenu_menuContainer {
-    display: none;
-  }
+	.SideMenu_menuContainer {
+		display: none;
+	}
 }

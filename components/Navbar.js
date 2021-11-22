@@ -8,14 +8,16 @@ import ClickAwayListener from "@mui/core/ClickAwayListener";
 import { infoData } from "../data/infoData";
 import { useRouter } from "next/router";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import OrderBar from "./shop/OrderBar";
+import OrderProgressBar from "./shop/OrderProgressBar";
+import Cart from "./shop/Cart/Cart";
+import ReactCSSTransitionGroup from "react-transition-group";
 
 function Navbar({ page }) {
 	const [showMenu, setShowMenu] = useState(false);
 	const [isScroll, setIsScroll] = useState(false);
 	const [showSignIn, setShowSignIn] = useState(false);
-
 	const [isShoppingWindow, setIsShoppingWindow] = useState(true);
+	const [showShoppingCart, setShowShoppingCart] = useState(false);
 
 	const router = useRouter();
 
@@ -37,7 +39,7 @@ function Navbar({ page }) {
 	}
 
 	function handleShoppingCartClick() {
-		console.log(window.alert("clicked shopping cart"));
+		setShowShoppingCart(!showShoppingCart);
 	}
 
 	function navMenuButton(pageName) {
@@ -86,7 +88,7 @@ function Navbar({ page }) {
 
 	return (
 		<>
-			{/* Desktop html */}
+			{/* //*Desktop html ----------------------------------------------------*/}{" "}
 			<div
 				id="navbar"
 				className={
@@ -140,10 +142,10 @@ function Navbar({ page }) {
 							{/* //TODO: page==="account" useEffect to get shopping window true/fase. */}
 							{navMenuButton(page)}
 						</div>
-						<OrderBar />
+						{/* <OrderProgressBar /> */}
 					</div>
 
-					{/* Mobile html */}
+					{/* //* Mobile html ----------------------------------------------------*/}
 					<div className="navbar__mobile">
 						<div id="burgerImage">
 							<IconButton
@@ -176,7 +178,7 @@ function Navbar({ page }) {
 					</div>
 				</div>
 
-				{/* Show more menu */}
+				{/* //* Show more menu ------------------------------------------------ */}
 				{showMenu && (
 					<ClickAwayListener
 						// className="click-away"
@@ -228,6 +230,7 @@ function Navbar({ page }) {
 					</ClickAwayListener>
 				)}
 			</div>
+			{/* //* Show Sign In ------------------------------------------------- */}
 			{showSignIn && (
 				<ClickAwayListener onClickAway={() => setShowSignIn(false)}>
 					<div>
@@ -236,10 +239,15 @@ function Navbar({ page }) {
 					</div>
 				</ClickAwayListener>
 			)}
-
-
+			{/* //* Show Shopping Car ------------------------------------------------- */}
+			{showShoppingCart && (
+				<ClickAwayListener onClickAway={() => setShowShoppingCart(false)}>
+					<div>
+						<Cart closeCart={handleShoppingCartClick} />
+					</div>
+				</ClickAwayListener>
+			)}
 			<div className="sc-ckVGcZ dvMPLK" id="navHelper"></div>
-
 			{/* Component External CSS */}
 			<style jsx>{homecss}</style>
 		</>

@@ -1,0 +1,7 @@
+@media screen and (min-width: 801px) {
+	.OurPicksComponent_img {
+		width: 90%;
+		margin-top: 50px;
+		border-radius: 5px;
+	}
+}

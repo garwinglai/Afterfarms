@@ -5,11 +5,12 @@ export default css`
 		display: flex;
 		flex-direction: column-reverse;
 		background-color: var(--brown-bg);
+		overflow: hidden;
 	}
 
-  .Banner2__Left h1 {
-    font-size: 31px;
-  }
+	.Banner2__Left h1 {
+		font-size: 31px;
+	}
 
 	.Banner2 img {
 		width: 100%;
@@ -34,9 +35,9 @@ export default css`
 			padding: 20px 50px 0;
 		}
 
-    .Banner2 h1 {
-      font-size: 45px;
-    }
+		.Banner2 h1 {
+			font-size: 45px;
+		}
 
 		.Banner2 img {
 			${
@@ -57,7 +58,7 @@ export default css`
 
 		.Banner2__Right {
 			width: 100%;
-      padding-bottom: 50px;
+			padding-bottom: 50px;
 		}
 
 		.Banner2 p {

@@ -16,6 +16,7 @@ import SubscribeStrip from "../components/Home/SubscribeStrip";
 import FloatingButton from "../components/Home/FloatingButton";
 import Link from "next/link";
 import Script from "next/script";
+import styles from "../styles/css/landing-page.module.css";
 
 export default function Home() {
 	return (
@@ -23,24 +24,14 @@ export default function Home() {
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			</Head>
-			<div id="root">
+			<div id="root" className={styles.Home}>
 				<Script
 					src="https://kit.fontawesome.com/8b4571ee68.js"
 					crossOrigin="anonymous"
 					strategy="beforeInteractive"
 				></Script>
 				<div id="main" className="sc-gbzWSY ejDqyh">
-					{/* <Banner /> */}
 					<Banner2 />
-					{/* <Link href="/testdata">
-						<a>test data</a>
-					</Link>
-					<Link href="/info/about-us">
-						<a>About data</a>
-					</Link>
-					<Link href="/produce">
-						<a>Shop Produce</a>
-					</Link> */}
 					<BenefitsStrip />
 					<Membership />
 					{/* <AnimationStrip /> */}

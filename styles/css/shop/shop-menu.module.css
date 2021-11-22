@@ -1,0 +1,44 @@
+.ShopMenu {
+	width: 25%;
+	background-color: var(--yellow-bg-2);
+	padding: 20px 25px 0 50px;
+}
+
+.ShopMenu_container {
+	position: sticky;
+	top: 8rem;
+}
+
+.ShopMenu h1 {
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--gray-border);
+}
+
+.ShopMenu_menuTop a {
+	display: block;
+	text-decoration: none;
+	color: var(--gray-text);
+	margin: 10px 0;
+}
+
+.ShopMenu_menuTopItem {
+	font-size: 18px;
+}
+
+.ShopMenu_subMenu {
+	margin: 15px 0 20px;
+}
+
+.ShopMenu_subMenuItem {
+	font-size: 15px;
+}
+
+.ShopMenu_menuTop a:hover {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+	.ShopMenu {
+		display: none;
+	}
+}
